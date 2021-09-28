@@ -1,0 +1,15 @@
+---
+- hosts: all
+  collections:
+    - redhat.satellite
+
+  tasks:
+  - name: "Refresh the manifest"
+    redhat.satellite.subscription_manifest:
+      username: "admin4demo"
+      password: "hellooo"
+      server_url: "https://satellite.tamlab.pnq2.redhat.com"
+      organization: "TAM"
+      validate_certs: "no"
+      state: "refreshed"
+
