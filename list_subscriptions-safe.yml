@@ -1,0 +1,34 @@
+---
+- hosts: all
+  vars_files: credential.yml
+  collections:
+    - redhat.satellite
+
+
+  tasks:
+  - name: "Show a subscription"
+    redhat.satellite.subscription_info:
+      username: "{{ username }}"
+      password: "{{ password }} 
+      server_url: "https://satellite.tamlab.pnq2.redhat.com"
+      organization: "TAM"
+      validate_certs: "no"
+      search: 
+    register: result
+
+  - name: save the Json data to a Variable as a Fact
+    set_fact: 
+      jsondata: "{{ result }}"
+
+  - name: Build list of subscriptions
+    set_fact:
+      subsendname:  "{{ jsondata | json_query(jmesquery) }}"
+    vars:
+      jmesquery: 'subscriptions[*].[name, end_date]'
+
+  - name: Print list of subscriptions
+    debug: 
+      msg: "{{ item }}"
+    with_items: 
+    - "{{ subsendname }}"
+
