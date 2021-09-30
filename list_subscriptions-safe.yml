@@ -9,7 +9,7 @@
   - name: "Show a subscription"
     redhat.satellite.subscription_info:
       username: "{{ username }}"
-      password: "{{ password }} 
+      password: "{{ password }}"
       server_url: "https://satellite.tamlab.pnq2.redhat.com"
       organization: "TAM"
       validate_certs: "no"
