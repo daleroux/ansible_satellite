@@ -1,0 +1,18 @@
+---
+- hosts: all
+  vars_files: credential.yml
+  collections:
+    - redhat.satellite
+
+
+  tasks:
+  - name: "Change CV in preparation to leapp upgrade"
+    redhat.satellite.host:
+      username: "{{ username }}"
+      password: "{{ password }}"
+      server_url: "https://satellite.tamlab.pnq2.redhat.com"
+      organization: "TAM"
+      validate_certs: "no"
+      name: "{{ contenthost }}"
+      content_view: "{{ contentview }}"
+
