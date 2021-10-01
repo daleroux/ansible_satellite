@@ -14,5 +14,5 @@
       organization: "TAM"
       validate_certs: "no"
       name: "{{ contenthost }}"
-      content_view: "{{ contentview }}"
+      content_view: "LEAPP_79_to_84"
 
