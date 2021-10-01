@@ -1,0 +1,2 @@
+    subscription-manager register --org="Banque_Nationale_du_Canada" --activationkey="SDDC7"
+

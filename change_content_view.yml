@@ -1,8 +1,6 @@
 ---
 - hosts: all
   vars_files: credential.yml
-    vars:
-    - contentview: "{{ survey_contenview.split('\n') }}"
   collections:
     - redhat.satellite
 
