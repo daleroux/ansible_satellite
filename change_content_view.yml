@@ -1,6 +1,8 @@
 ---
 - hosts: all
   vars_files: credential.yml
+    vars:
+    - contentview: "{{ survey_contenview.split('\n') }}"
   collections:
     - redhat.satellite
 
@@ -13,6 +15,6 @@
       server_url: "https://satellite.tamlab.pnq2.redhat.com"
       organization: "TAM"
       validate_certs: "no"
-      name: "{{ contenthost }}"
-      content_view: "LEAPP_79_to_84"
+      name: "{{ inventory_hostname }}"
+      content_view: "{{ contentview }}"
 
