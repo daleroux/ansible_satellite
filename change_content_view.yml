@@ -4,7 +4,6 @@
   collections:
     - redhat.satellite
 
-
   tasks:
   - name: "Change CV in preparation to leapp upgrade"
     redhat.satellite.host:
@@ -13,6 +12,6 @@
       server_url: "https://satellite.tamlab.pnq2.redhat.com"
       organization: "TAM"
       validate_certs: "no"
-      name: "{{ inventory_hostname }}"
-      content_view: "{{ contentview }}"
+      name: "rhel7-server1.tamlab.rdu2.redhat.com"
+      content_view: "CV_RHEL7"
 
