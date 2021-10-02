@@ -1,0 +1,4 @@
+---
+servers:
+  - servername: rhel7-server1.tamlab.rdu2.redhat.com
+  - servername: rhel7-server2.tamlab.rdu2.redhat.com
