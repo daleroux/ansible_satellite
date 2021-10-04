@@ -2,7 +2,6 @@
 - hosts: all
   vars_files: 
     - credential.yml
-    - servers_to_upgrade.yml
   collections:
     - redhat.satellite
 
@@ -14,6 +13,6 @@
       server_url: "https://satellite.tamlab.pnq2.redhat.com"
       organization: "TAM"
       validate_certs: "no"
-      name: "{{ item.servername }}"
+      name: "{{ item }}"
       content_view: "{{ contentview }}"
-    loop: "{{ servers }}"
+    loop: "{{ servername }}"
